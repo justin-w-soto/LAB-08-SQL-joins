@@ -57,67 +57,68 @@ describe('app routes', () => {
     
     // // // POST TEST
   
-    // test('POST / creates a new friend', async () => {
-    //   const newfriend = {
-    //     name: 'lil B',
-    //     cool_factor: 5,
-    //     cool_haircut: true,
-    //     shirt_id: 1
+    test('POST / creates a new friend', async () => {
+      const newfriend = {
+        id: 8,
+        name: 'lil B',
+        cool_factor: 5,
+        cool_haircut: true,
+        shirt_id: 1
         
-    //   };
+      };
   
-    //   const data = await fakeRequest(app)
-    //     .post('/friends')
-    //     .send(newfriend)
-    //     // .expect(200)
-    //     .expect('Content-Type', /json/);
+      const data = await fakeRequest(app)
+        .post('/friends')
+        .send(newfriend)
+        // .expect(200)
+        .expect('Content-Type', /json/);
         
-    //   expect(data.body.name).toEqual(newfriend.name);
-    //   expect(data.body.id).toBeGreaterThan(0);
+      expect(data.body).toEqual(newfriend);
+      expect(data.body.id).toBeGreaterThan(0);
       
   
-    // });
+    });
   
-    // // PUT TEST
+    // PUT TEST
   
-    // test('PUT / friends/:id updates friend', async () => {
-    //   const updatedData = {
+    test('PUT / friends/:id updates friend', async () => {
+      const updatedData = {
       
-    //     name: 't neck',
-    //     cool_factor: 5,
-    //     cool_haircut: false,
-    //     shirt_id: 1
-    //   };
+        name: 't neck',
+        cool_factor: 5,
+        cool_haircut: false,
+        shirt_id: 1
+      };
     
-    //   const data = await fakeRequest(app)
-    //     .put('/friends/1')
-    //     .send(updatedData)
-    //     // .expect(200)
-    //     .expect('Content-Type', /json/);
+      const data = await fakeRequest(app)
+        .put('/friends/1')
+        .send(updatedData)
+        // .expect(200)
+        .expect('Content-Type', /json/);
     
-    //   expect(data.body.name).toEqual(updatedData.name);
-    //   expect(data.body.cool_factor).toEqual(updatedData.cool_factor);
+      expect(data.body.name).toEqual(updatedData.name);
+      expect(data.body.cool_factor).toEqual(updatedData.cool_factor);
     
     
-    // });
+    });
 
 
-    // test('GET colors from table', async () => {
-    //   const updatedData = {
+    test('GET colors from table', async () => {
+      const updatedData = {
       
-    //     shirt_color: 1
-    //   };
+        shirt_color: 1
+      };
     
-    //   const data = await fakeRequest(app)
-    //     .get('/shirt')
-    //     .send(updatedData)
-    //     .expect(200)
-    //     .expect('Content-Type', /json/);
+      const data = await fakeRequest(app)
+        .get('/shirt')
+        .send(updatedData)
+        .expect(200)
+        .expect('Content-Type', /json/);
     
-    //   expect(data.body.name).toEqual(updatedData.name);
-    //   expect(data.body.cool_factor).toEqual(updatedData.cool_factor);
+      expect(data.body.name).toEqual(updatedData.name);
+      expect(data.body.cool_factor).toEqual(updatedData.cool_factor);
     
     
-    // });
+    });
   });
 });
