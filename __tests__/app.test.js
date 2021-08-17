@@ -1,21 +1,53 @@
 require('dotenv').config();
+
 const { execSync } = require('child_process');
 const fakeRequest = require('supertest');
 const app = require('../lib/app');
 const client = require('../lib/client');
 const friendsData = require('../data/friends.js');
 
+
+
 describe('app routes', () => {
   describe('routes', () => {
     // let token;
-  
+    
     beforeAll(async () => {
       execSync('npm run setup-db');
+      
       await client.connect();
     }, 20000);
-  
+    
     afterAll(done => {
       return client.end(done);
+    });
+
+    // RETURN SHIRT COLOR
+
+    test('returns shirt colors', async() => {
+      const expectation = [
+        { 
+          shirt_color: 'red' 
+        },
+        {
+          shirt_color: 'blue' 
+        },
+        { 
+          shirt_color: 'yellow' 
+        },
+        {
+          shirt_color: 'brown' 
+        },
+        { 
+          shirt_color: 'green'
+        }
+      ];
+      const data = await fakeRequest(app)
+        .get('/shirt')
+        .expect('Content-Type', /json/)
+        .expect(200);
+    
+      expect(data.body).toEqual(expectation);
     });
 
     // RETURNS FRIENDS NAMES TEST
@@ -36,8 +68,7 @@ describe('app routes', () => {
 
     }, 20000);
     
-    
-    // RETURNS FRIENDs DATA TEST
+    // GET ID TEST
     
     test('GET /friends/:id returns individual friend data', async () => {
       const expectation = friendsData[0];
@@ -57,7 +88,8 @@ describe('app routes', () => {
       const newfriend = {
         name: 'lil B',
         cool_factor: 5,
-        cool_haircut: true
+        cool_haircut: true,
+        shirt_color: 'red'
         
       };
   
@@ -79,7 +111,8 @@ describe('app routes', () => {
       
         name: 't neck',
         cool_factor: 5,
-        cool_haircut: false
+        cool_haircut: false,
+        shirt_color: 'red'
       };
     
       const data = await fakeRequest(app)
