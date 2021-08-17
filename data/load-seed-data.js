@@ -12,13 +12,13 @@ async function run() {
     await client.connect();
 
     await Promise.all(
-      shirt.map(shIrt => {
+      shirt.map(s => {
         return client.query(`
-                      INSERT INTO shirt (shirt)
+                      INSERT INTO shirt (shirt_color)
                       VALUES ($1)
                       RETURNING *;
                   `,
-        [shIrt.shirt]);
+        [s.shirt_color]);
       })
     );
       
@@ -26,10 +26,10 @@ async function run() {
     await Promise.all(
       friends.map(friend => {
         return client.query(`
-                    INSERT INTO friends (name, cool_factor, cool_haircut, shirt_color)
+                    INSERT INTO friends (name, cool_factor, cool_haircut, shirt_id)
                     VALUES ($1, $2, $3, $4);
                 `,
-        [friend.name, friend.cool_factor, friend.cool_haircut, friend.shirt_color]);
+        [friend.name, friend.cool_factor, friend.cool_haircut, friend.shirt_id]);
       })
     );
     

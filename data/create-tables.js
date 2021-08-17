@@ -19,7 +19,7 @@ async function run() {
                 );         
                 CREATE TABLE shirt (
                   id SERIAL PRIMARY KEY,
-                  color VARCHAR(512) NOT NULL
+                  shirt_color VARCHAR(512) NOT NULL
               );     
   
                 CREATE TABLE friends (
@@ -27,7 +27,7 @@ async function run() {
                     name VARCHAR(512) NOT NULL,
                     cool_factor INTEGER NOT NULL,
                     cool_haircut BOOLEAN NOT NULL,
-                    shirt_color INTEGER REFERENCES shirt(id)
+                    shirt_id INTEGER REFERENCES shirt(id)
             );
         `);
 

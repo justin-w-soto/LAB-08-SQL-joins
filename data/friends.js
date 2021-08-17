@@ -4,7 +4,7 @@ module.exports = [
     name: 'turkey neck',
     cool_factor: 3,
     cool_haircut: false,
-    shirt_color: 1
+    shirt_id: 1
     
   },
 
@@ -13,7 +13,7 @@ module.exports = [
     name: 'crab claw',
     cool_factor: 4,
     cool_haircut: false,
-    shirt_color: 2
+    shirt_id: 2
   },
 
   {
@@ -21,7 +21,7 @@ module.exports = [
     name: 'ham fist',
     cool_factor: 4,
     cool_haircut: false,
-    shirt_color: 1
+    shirt_id: 1
   },
 
   {
@@ -29,7 +29,7 @@ module.exports = [
     name: 'block head',
     cool_factor: 10,
     cool_haircut: false,
-    shirt_color: 2
+    shirt_id: 2
   },
 
   {
@@ -37,7 +37,7 @@ module.exports = [
     name: 'poindexter',
     cool_factor: 1,
     cool_haircut: false,
-    shirt_color: 3
+    shirt_id: 3
   },
 
   {
@@ -45,7 +45,7 @@ module.exports = [
     name: 'grandma',
     cool_factor: 10,
     cool_haircut: true,
-    shirt_color: 4
+    shirt_id: 4
   },
 
   {
@@ -53,6 +53,6 @@ module.exports = [
     name: 'Gator',
     cool_factor: 8,
     cool_haircut: false,
-    shirt_color: 5
+    shirt_id: 5
   }
 ];
