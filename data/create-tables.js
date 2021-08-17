@@ -16,12 +16,18 @@ async function run() {
                     id SERIAL PRIMARY KEY,
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
-                );           
-                CREATE TABLE animals (
+                );         
+                CREATE TABLE shirt (
+                  id SERIAL PRIMARY KEY,
+                  color VARCHAR(512) NOT NULL
+              );     
+  
+                CREATE TABLE friends (
                     id SERIAL PRIMARY KEY NOT NULL,
                     name VARCHAR(512) NOT NULL,
                     cool_factor INTEGER NOT NULL,
-                    owner_id INTEGER NOT NULL REFERENCES users(id)
+                    cool_haircut BOOLEAN NOT NULL,
+                    shirt_color INTEGER REFERENCES shirt(id)
             );
         `);
 
