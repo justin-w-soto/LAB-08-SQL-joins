@@ -49,8 +49,8 @@ describe('app routes', () => {
       
       const data = await fakeRequest(app)
         .get('/friends/1')
-        .expect('Content-Type', /json/);
-        // .expect(200);
+        .expect('Content-Type', /json/)
+        .expect(200);
   
       expect(data.body).toEqual(expectation);
     });
@@ -70,7 +70,7 @@ describe('app routes', () => {
       const data = await fakeRequest(app)
         .post('/friends')
         .send(newfriend)
-        // .expect(200)
+        .expect(200)
         .expect('Content-Type', /json/);
         
       expect(data.body).toEqual(newfriend);
