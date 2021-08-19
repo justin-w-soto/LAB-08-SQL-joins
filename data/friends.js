@@ -52,7 +52,7 @@ module.exports = [
     
     name: 'Gator',
     cool_factor: 8,
-    cool_haircut: true,
+    cool_haircut: false,
     shirt_id: 5
   }
 ];
