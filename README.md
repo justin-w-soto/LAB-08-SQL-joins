@@ -1,3 +1,7 @@
+GIT HUB IS SHOWING NPM ERRORS BUT VSCODE IS NOT? V CONFUSED
+![lab 08](https://user-images.githubusercontent.com/83792867/130136613-db7e4a00-7884-40dc-817a-0e85bc90ea61.png)
+    
+
 # Create Alchemy SQL BE
 
 ## Getting started
